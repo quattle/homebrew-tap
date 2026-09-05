@@ -10,7 +10,7 @@ class Quattle < Formula
   def install
     libexec.install "quattle.py", "quattle_annex.py", "vectors.json"
 
-    python = Formula["python@3.13"].opt_bin/"python3"
+    python = Formula["python@3.13"].opt_bin/"python3.13"
 
     (bin/"quattle").write <<~SH
       #!/bin/sh
