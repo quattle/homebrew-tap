@@ -1,9 +1,9 @@
 class Quattle < Formula
   desc "Command line for quattle, the end-to-end encrypted vault"
   homepage "https://quattle.app"
-  url "https://quattle.app/cli/releases/quattle-cli-1.7.4.zip"
-  sha256 "7c584f7ff97d58e9b8f80b8c6c7ffe1db6ed05201fff512891e9faab2cbe5089"
-  version "1.7.4"
+  url "https://quattle.app/cli/releases/quattle-cli-1.7.5.zip"
+  sha256 "b4b9a72a0e3af63205efb945c93ab2e54a0e646e646ad53d3144f8a80de57c4d"
+  version "1.7.5"
 
   depends_on "python@3.13"
 
@@ -25,16 +25,15 @@ class Quattle < Formula
 
   def caveats
     <<~EOS
-      quattle needs tokens from the Automation page of your vault:
-        export QUATTLE_READ_TOKEN="..."
-        export QUATTLE_WRITE_TOKEN="..."
+      quattle needs a read token and a write token from the Automation page of your vault.
+      Store them with: quattle login
       Then: quattle ls, quattle put <file>, quattle serve, quattle mcp
       Docs: https://quattle.app/docs
     EOS
   end
 
   test do
-    assert_match "quattle-cli 1.7.4", shell_output("#{bin}/quattle version")
+    assert_match "quattle-cli 1.7.5", shell_output("#{bin}/quattle version")
     assert_match "all vectors pass", shell_output("#{bin}/quattle test")
   end
 end
