@@ -1,9 +1,9 @@
 class Quattle < Formula
   desc "Command line for quattle, the end-to-end encrypted vault"
   homepage "https://quattle.app"
-  url "https://quattle.app/cli/releases/quattle-cli-1.7.6.zip"
-  sha256 "ef9a7d88c11b4a411ed13cccc50b894360c0d48588b567c30f5c2f60064f8008"
-  version "1.7.6"
+  url "https://quattle.app/cli/releases/quattle-cli-1.7.7.zip"
+  sha256 "4da62cd67cfa7b95e3592d55bf3d7f13b623cf093c0f4893e24efae7ebaa2228"
+  version "1.7.7"
 
   depends_on "python@3.13"
 
@@ -33,7 +33,7 @@ class Quattle < Formula
   end
 
   test do
-    assert_match "quattle-cli 1.7.6", shell_output("#{bin}/quattle version")
+    assert_match "quattle-cli 1.7.7", shell_output("#{bin}/quattle version")
     assert_match "all vectors pass", shell_output("#{bin}/quattle test")
   end
 end
